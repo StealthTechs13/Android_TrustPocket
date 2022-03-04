@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextAppearance="@style/Title3"
+        app:title="@string/Market_Category_Dexes" />
+
+    <LinearLayout
+        android:id="@+id/rlyTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+
+        <EditText
+            android:id="@+id/edtDexes"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.9"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:hint="Enter here"
+            android:background="@drawable/rounded_lawrence_background_single"
+         />
+
+        <ImageButton
+            android:id="@+id/imgBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:foregroundTint="@color/red_50"
+            android:background="@drawable/right_arrow"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sessionsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="32dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/rlyTop" />
+
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="32dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:background="?android:windowBackground"
+        android:clickable="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>
